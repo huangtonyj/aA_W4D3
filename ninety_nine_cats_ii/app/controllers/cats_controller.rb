@@ -1,4 +1,6 @@
 class CatsController < ApplicationController
+  # before_action :require_login
+
   def index
     @cats = Cat.all
     render :index
