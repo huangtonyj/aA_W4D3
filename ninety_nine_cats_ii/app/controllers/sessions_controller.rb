@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+before_action :require_logout, only: [:new, :create]
 
   def new
     @user = User.new
@@ -20,6 +21,5 @@ class SessionsController < ApplicationController
     logout!
     redirect_to new_session_url
   end
-
 
 end

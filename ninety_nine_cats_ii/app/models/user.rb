@@ -44,4 +44,10 @@ class User < ApplicationRecord
     user = User.find_by(username: username)
     user && user.is_password?(pw) ? user : nil
   end
+
+  has_many :cats,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Cat
+
 end
